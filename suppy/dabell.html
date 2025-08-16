@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .carousel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+            overflow: hidden;
+            position: relative;
+            width: 1600px;
+            max-width: 100vw;
+            height: 900px;
+        }
+        .carousel img {
+            width: 800px;
+            height: 800px;
+            object-fit: cover;
+            border-radius: 64px;
+            box-shadow: 0 8px 48px #c7158522;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            opacity: 0;
+            transition: transform 0.8s, opacity 0.8s;
+        }
+        .carousel img.active {
+            z-index: 2;
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.2);
+            box-shadow: 0 24px 64px #c7158555;
+        }
+        .carousel img.left {
+            z-index: 1;
+            opacity: 0.6;
+            transform: translate(-350%, -50%) scale(0.9);
+        }
+        .carousel img.right {
+            z-index: 1;
+            opacity: 0.6;
+            transform: translate(200%, -50%) scale(0.9);
+        }
+        .carousel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 32px;
+            flex-wrap: nowrap;
+            margin-bottom: 40px;
+            overflow: hidden;
+            position: relative;
+            width: 700px;
+            max-width: 95vw;
+            height: 180px;
+        }
+        .carousel img {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px #c7158522;
+            transition: transform 0.5s;
+        }
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #fffafc;
+        }
+        .logo {
+            text-align: center;
+            padding: 48px 0 24px 0;
+        }
+        .logo h1 {
+            font-family: 'Segoe Script', cursive, 'Segoe UI', sans-serif;
+            font-size: 3em;
+            color: #c71585;
+            letter-spacing: 2px;
+            text-shadow: 1px 2px 8px #ffe4ec;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <h1>Da-belleza</h1>
+    </div>
+    <nav style="text-align:center; margin-bottom: 32px;">
+    <section id="contactSection" style="display:none; max-width:600px; margin: 48px auto 0 auto; background:#fff; border-radius:16px; box-shadow:0 2px 12px #c7158522; padding:32px;">
+        <h2 style="color:#c71585;">Contact Us</h2>
+        <p style="color:#333; font-size:1.1em;">We'd love to hear from you! Reach out to Da-belleza:</p>
+        <ul style="color:#333; font-size:1.1em; line-height:1.7; padding-left: 20px;">
+            <li>Email: <a href="mailto:info@dabelleza.com" style="color:#c71585;">info@dabellezaconcept.com</a></li>
+            <li>Phone: <a href="tel:+1234567890" style="color:#c71585;">+234 7087404081</a></li>
+            <li>Instagram: <a href="https://instagram.com/dabelleza" target="_blank" style="color:#c71585;">@Bonabunny</a></li>
+            <li>Address:opposite Galaxy Hotel </li>
+        </ul>
+    </section>
+        <a href="#" id="homeLink" style="margin: 0 18px; text-decoration: none; color: #c71585; font-weight: bold; font-size: 1.15em; padding: 8px 18px; border-radius: 22px; transition: background 0.2s, color 0.2s;">Home</a>
+        <a href="#" id="aboutLink" style="margin: 0 18px; text-decoration: none; color: #c71585; font-weight: bold; font-size: 1.15em; padding: 8px 18px; border-radius: 22px; transition: background 0.2s, color 0.2s;">About Us</a>
+        <a href="#" id="servicesLink" style="margin: 0 18px; text-decoration: none; color: #c71585; font-weight: bold; font-size: 1.15em; padding: 8px 18px; border-radius: 22px; transition: background 0.2s, color 0.2s;">Services</a>
+        <a href="#" id="contactLink" style="margin: 0 18px; text-decoration: none; color: #c71585; font-weight: bold; font-size: 1.15em; padding: 8px 18px; border-radius: 22px; transition: background 0.2s, color 0.2s;">Contact</a>
+    <a href="broyy.html" id="trainingLink" style="margin: 0 18px; text-decoration: none; color: #c71585; font-weight: bold; font-size: 1.15em; padding: 8px 18px; border-radius: 22px; transition: background 0.2s, color 0.2s;">Training</a>
+    </nav>
+
+        <div style="position:relative; display:flex; justify-content:center; align-items:center;">
+            <button id="carouselLeft" style="position:absolute; left:0; top:50%; transform:translateY(-50%); background:#c71585; color:#fff; border:none; border-radius:50%; width:40px; height:40px; font-size:1.5em; cursor:pointer; z-index:3;">&#8592;</button>
+            <div class="carousel" id="carousel">
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80" alt="Makeup Beauty">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=300&q=80" alt="Nails Beauty">
+                <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=300&q=80" alt="Microblading Beauty">
+                    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=300&q=80" alt="Hair Styling Beauty">
+                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=300&q=80" alt="Spa Beauty">
+                <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=300&q=80" alt="Massage Beauty">
+                <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=300&q=80" alt="Makeup Artist Beauty">
+                    <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=300&q=80" alt="Beauty Products">
+                    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=300&q=80" alt="Brows Beauty">
+                    <img src="https://images.unsplash.com/photo-1512255967904-7a62c6a4c8f8?auto=format&fit=crop&w=300&q=80" alt="Facial Beauty">
+                    <img src="https://images.unsplash.com/photo-1514679725429-988d3a0e0b43?auto=format&fit=crop&w=300&q=80" alt="Eyelash Extensions">
+                    <img src="https://images.unsplash.com/photo-1519412553480-1c7f3b6c7a2e?auto=format&fit=crop&w=300&q=80" alt="Serum Beauty">
+                    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=300&q=80" alt="Cosmetic Tools">
+            </div>
+            <button id="carouselRight" style="position:absolute; right:0; top:50%; transform:translateY(-50%); background:#c71585; color:#fff; border:none; border-radius:50%; width:40px; height:40px; font-size:1.5em; cursor:pointer; z-index:3;">&#8594;</button>
+        </div>
+
+    <section id="aboutSection" style="display:none; max-width:600px; margin: 0 auto; background:#fff; border-radius:16px; box-shadow:0 2px 12px #c7158522; padding:32px;">
+        <h2 style="color:#c71585;">About Da-belleza</h2>
+        <p style="color:#333; font-size:1.1em;">Da-belleza is your trusted destination for beauty, style, and self-care. We offer a wide range of services and products to help you look and feel your best. Our team is passionate about empowering individuals through beauty and training.</p>
+    </section>
+
+    <section id="servicesSection" style="display:none; max-width:600px; margin: 48px auto 0 auto; background:#fff; border-radius:16px; box-shadow:0 2px 12px #c7158522; padding:32px;">
+        <h2 style="color:#c71585;">Our Services</h2>
+        <ul style="color:#333; font-size:1.1em; line-height:1.7; padding-left: 20px;">
+            <li>Nails (manicure, pedicure, nail art)</li>
+            <li>Makeup (bridal, events, everyday looks)</li>
+            <li>Microblading & brow shaping</li>
+            <li>Facials & skincare treatments</li>
+            <li>Hair styling & coloring</li>
+            <li>Eyelash extensions</li>
+            <li>Waxing & hair removal</li>
+            <li>Beauty consultations</li>
+            <li>Personalized training sessions</li>
+            <li>And much more!</li>
+        </ul>
+    </section>
+
+    <script>
+        document.getElementById('contactLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('aboutSection').style.display = 'none';
+            document.getElementById('servicesSection').style.display = 'none';
+            document.getElementById('contactSection').style.display = 'block';
+            document.getElementById('contactSection').scrollIntoView({ behavior: 'smooth' });
+        });
+        // Carousel navigation arrows
+        document.getElementById('carouselLeft').onclick = function() {
+            current = (current - 1 + images.length) % images.length;
+            updateCarousel();
+        };
+        document.getElementById('carouselRight').onclick = function() {
+            current = (current + 1) % images.length;
+            updateCarousel();
+        };
+        // Circular carousel animation
+        const carousel = document.getElementById('carousel');
+        const images = carousel.querySelectorAll('img');
+        let current = 0;
+        function updateCarousel() {
+            images.forEach((img, i) => {
+                img.classList.remove('active', 'left', 'right');
+                img.style.opacity = 0;
+            });
+            images[current].classList.add('active');
+            images[current].style.opacity = 1;
+            // Previous image
+            let prev = (current - 1 + images.length) % images.length;
+            images[prev].classList.add('left');
+            images[prev].style.opacity = 0.6;
+            // Next image
+            let next = (current + 1) % images.length;
+            images[next].classList.add('right');
+            images[next].style.opacity = 0.6;
+        }
+        updateCarousel();
+        setInterval(() => {
+            current = (current + 1) % images.length;
+            updateCarousel();
+        }, 1800);
+        document.getElementById('aboutLink').addEventListener('click', function(e) {
+
+            e.preventDefault();
+            document.getElementById('aboutSection').style.display = 'block';
+            document.getElementById('servicesSection').style.display = 'none';
+        });
+        document.getElementById('homeLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('aboutSection').style.display = 'none';
+            document.getElementById('servicesSection').style.display = 'none';
+            setTimeout(function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 100);
+        });
+        document.getElementById('servicesLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('aboutSection').style.display = 'none';
+            document.getElementById('servicesSection').style.display = 'block';
+            document.getElementById('servicesSection').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
